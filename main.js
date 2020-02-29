@@ -1,9 +1,9 @@
-var hydrogen = 0
+var hydrogenNuclei = 0
 
 function gameLoop() {
-hydrogen+=0.1
-hydrogen = Math.round( hydrogen * 10) / 10
-document.getElementById("hydrogenDisplay").innerHTML = "You have " + hydrogen + " hydrogen."
+hydrogenNuclei+=0.1
+hydrogenNuclei = Math.round( hydrogenNuclei * 10) / 10
+document.getElementById("hydrogenDisplay").innerHTML = "You have " + hydrogen + " hydrogen nuclei."
 }
 
 setInterval(gameLoop, 100)
