@@ -1,4 +1,4 @@
-var hydrogenNuclei = 0
+var hydrogenNuclei = 10
 
 function gameLoop() {
 hydrogenNuclei+=0.1
