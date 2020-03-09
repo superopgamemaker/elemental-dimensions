@@ -1,9 +1,14 @@
 var hydrogenNuclei = 10
-
+var firstHydrogenDimension = 0
 function gameLoop() {
-hydrogenNuclei+=0.01
-hydrogenNuclei = Math.round( hydrogenNuclei * 100) / 100
+hydrogenNuclei += 0.02
+hydrogenNuclei = Math.round( hydrogenNuclei * 50) / 50
 document.getElementById("hydrogenDisplay").innerHTML = "You have " + hydrogenNuclei + " hydrogen nuclei."
 }
-
-setInterval(gameLoop, 10)
+function buyFirstHydrogenDimension() {
+  if hydrogenNuclei.gte(10) {
+    hydrogenNuclei -= 10
+    firstHydrogenDimension += 1
+  }
+}
+setInterval(gameLoop, 20)
