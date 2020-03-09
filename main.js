@@ -9,6 +9,7 @@ function buyFirstHydrogenDimension() {
   if (hydrogenNuclei >= 10) {
     hydrogenNuclei -= 10
     firstHydrogenDimension += 1
+    document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + firstHydrogenDimension + " hydrogen dimension 1."
   }
 }
 setInterval(gameLoop, 20)
