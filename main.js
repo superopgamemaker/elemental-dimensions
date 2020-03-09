@@ -6,7 +6,7 @@ hydrogenNuclei = Math.round( hydrogenNuclei * 50) / 50
 document.getElementById("hydrogenDisplay").innerHTML = "You have " + hydrogenNuclei + " hydrogen nuclei."
 }
 function buyFirstHydrogenDimension() {
-  if hydrogenNuclei.gte(10) {
+  if (hydrogenNuclei >= 10) {
     hydrogenNuclei -= 10
     firstHydrogenDimension += 1
   }
