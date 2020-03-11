@@ -1,14 +1,23 @@
 var hydrogenNuclei = 10
+var firstHDCost = 10
+var firstHDMultiplier = 1
+var firstHDTo10 = 0
 var firstHydrogenDimension = 0
 function gameLoop() {
-hydrogenNuclei += firstHydrogenDimension/50
+hydrogenNuclei += firstHydrogenDimension*firstHDMultiplier/50
 hydrogenNuclei = Math.round( hydrogenNuclei * 50) / 50
 document.getElementById("hydrogenDisplay").innerHTML = "You have " + hydrogenNuclei + " hydrogen nuclei."
 }
 function buyFirstHydrogenDimension() {
-  if (hydrogenNuclei >= 10) {
-    hydrogenNuclei -= 10
+  if (hydrogenNuclei >= firstHDCost) {
+    hydrogenNuclei -= firstHDCost
     firstHydrogenDimension += 1
+    firstHDTo10 += 1
+    if (firstHDTo10 >= 10) {
+      firstHDTo10 = 0
+      firstHDCost *= 10
+      firstHDMultiplier *= 2
+    }
     document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + firstHydrogenDimension + " hydrogen dimension 1."
   }
 }
