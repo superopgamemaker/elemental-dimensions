@@ -17,6 +17,7 @@ function buyFirstHydrogenDimension() {
       firstHDTo10 = 0
       firstHDCost *= 10
       firstHDMultiplier *= 2
+      document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs" + firstHDCost + " hydrogen nuclei."
     }
     document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + firstHydrogenDimension + " hydrogen dimension 1."
   }
