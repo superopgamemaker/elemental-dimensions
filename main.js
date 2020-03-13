@@ -58,7 +58,7 @@ function save() {
 //Loading
 function load() {
 	let thesave = localStorage.getItem('elementaldimensonssave');
-	if (thesave = null) {
+	if (thesave == null) {
 		game = {
 			hydrogenNuclei: 10,
 			firstHDCost: 10,
