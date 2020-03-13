@@ -71,9 +71,10 @@ function load() {
 			secondHydrogenDimension: 0,
 			lastTick: Date.now(),
 		}
+	} else {
+		thesave = atob(thesave);
+		game = JSON.parse(thesave);
 	}
-	thesave = atob(thesave);
-	game = JSON.parse(thesave);
 }
 load();
 setInterval(save, 15000);
