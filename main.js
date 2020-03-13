@@ -29,7 +29,7 @@ function buyFirstHydrogenDimension() {
     document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + firstHydrogenDimension + " hydrogen dimension 1."
   }
 }
-function buyFirstHydrogenDimension() {
+function buySecondHydrogenDimension() {
   if (hydrogenNuclei >= secondHDCost) {
     hydrogenNuclei -= secondHDCost
     secondHydrogenDimension += 1
