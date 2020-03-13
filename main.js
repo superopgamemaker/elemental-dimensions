@@ -58,7 +58,23 @@ function save() {
 //Loading
 function load() {
 	let thesave = localStorage.getItem('elementaldimensonssave');
+	if (thesave = null) {
+		game = {
+			hydrogenNuclei: 10,
+			firstHDCost: 10,
+			firstHDMultiplier: 1,
+			firstHDTo10: 0,
+			firstHydrogenDimension: 0,
+			secondHDCost: 100,
+			secondHDMultiplier: 1,
+			secondHDTo10: 0,
+			secondHydrogenDimension: 0,
+			lastTick: Date.now(),
+		}
+	}
 	thesave = atob(thesave);
 	game = JSON.parse(thesave);
 }
+load();
+setInterval(save, 15000);
 setInterval(gameLoop, 20)
