@@ -60,6 +60,8 @@ function hardReset() {
 		secondHydrogenDimension: 0,
 		lastTick: Date.now(),
 	}
+	document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
+	document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
 }
 
 //Saving
@@ -78,6 +80,8 @@ function load() {
 		thesave = atob(thesave);
 		game = JSON.parse(thesave);
 	}
+	document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
+	document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
 }
 load();
 setInterval(save, 15000);
