@@ -48,6 +48,21 @@ function buySecondHydrogenDimension() {
 	}
 }
 
+function hardReset() {
+	game = {
+		hydrogenNuclei: 10,
+		firstHDCost: 10,
+		firstHDMultiplier: 1,
+		firstHDTo10: 0,
+		firstHydrogenDimension: 0,
+		secondHDCost: 100,
+		secondHDMultiplier: 1,
+		secondHDTo10: 0,
+		secondHydrogenDimension: 0,
+		lastTick: Date.now(),
+	}
+}
+
 //Saving
 function save() {
 	let thesave = JSON.stringify(game);
@@ -59,18 +74,7 @@ function save() {
 function load() {
 	let thesave = localStorage.getItem('elementaldimensonssave');
 	if (thesave == null) {
-		game = {
-			hydrogenNuclei: 10,
-			firstHDCost: 10,
-			firstHDMultiplier: 1,
-			firstHDTo10: 0,
-			firstHydrogenDimension: 0,
-			secondHDCost: 100,
-			secondHDMultiplier: 1,
-			secondHDTo10: 0,
-			secondHydrogenDimension: 0,
-			lastTick: Date.now(),
-		}
+		hardReset();
 	} else {
 		thesave = atob(thesave);
 		game = JSON.parse(thesave);
