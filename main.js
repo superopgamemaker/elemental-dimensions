@@ -82,7 +82,7 @@ function load() {
 	}
 	document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
 	document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
-=======
+}
   if (hydrogenNuclei >= firstHDCost) {
     hydrogenNuclei -= firstHDCost
     firstHydrogenDimension += 1
