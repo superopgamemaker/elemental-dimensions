@@ -83,33 +83,7 @@ function load() {
 	document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
 	document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
 }
-  if (hydrogenNuclei >= firstHDCost) {
-    hydrogenNuclei -= firstHDCost
-    firstHydrogenDimension += 1
-    firstHDTo10 += 1
-    if (firstHDTo10 >= 10) {
-      firstHDTo10 = 0
-      firstHDCost *= 10
-      firstHDMultiplier *= 2
-      document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + firstHDCost + " hydrogen nuclei."
-    }
-    document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + firstHydrogenDimension + " hydrogen dimension 1."
-  }
-}
-function buySecondHydrogenDimension() {
-  if (hydrogenNuclei >= secondHDCost) {
-    hydrogenNuclei -= secondHDCost
-    secondHydrogenDimension += 1
-    secondHDTo10 += 1
-    if (secondHDTo10 >= 10) {
-      secondHDTo10 = 0
-      secondHDCost *= 30
-      secondHDMultiplier *= 2
-      document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + secondHDCost + " hydrogen nuclei."
-    }
-    document.getElementById("hydrogenDimension2Display").innerHTML = "You have " + secondHydrogenDimension + " hydrogen dimension 2"
-  }
-}
+
 load();
 setInterval(save, 1500);
 setInterval(gameLoop, 20)
