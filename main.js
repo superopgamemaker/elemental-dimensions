@@ -30,7 +30,7 @@ function buyFirstHydrogenDimension() {
 			game.firstHDMultiplier *= 2
 			document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
 		}
-	document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + game.firstHydrogenDimension + " hydrogen dimension 1."
+	document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + game.secondHydrogenDimension + " hydrogen dimension 2."
 	}
 }
 function buySecondHydrogenDimension() {
@@ -44,6 +44,7 @@ function buySecondHydrogenDimension() {
 			game.secondHDMultiplier *= 2
 			document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
 		}
+	document.getElementById("hydrogenDimensionDisplay2").innerHTML = "You have " + game.secondHydrogenDimension + " hydrogen dimension 2."
 	}
 }
 
