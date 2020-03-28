@@ -17,6 +17,7 @@ function gameLoop() {
 	game.firstHydrogenDimension += game.secondHydrogenDimension * game.secondHDMultiplier / 50 * (Date.now() - game.lastTick) / 20
 	document.getElementById("hydrogenDisplay").innerHTML = "You have " + Math.round(game.hydrogenNuclei * 50) / 50 + " hydrogen nuclei."
 	document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + Math.round(game.firstHydrogenDimension * 50) / 50 + " hydrogen dimension 1."
+	document.getElementById("hydrogenDimension2Display").innerHTML = "You have " + Math.round(game.secondHydrogenDimension * 50) / 50 + " hydrogen dimension 2."
 	game.lastTick = Date.now()
 }
 function buyFirstHydrogenDimension() {
