@@ -17,9 +17,9 @@ var game = {
 	// This is for off-window production
 	lastTick: D(Date.now()),
 }
-function gameLoop() {
-	game.hydrogenNuclei.add(game.firstHydrogenDimension).times(game.firstHDMultiplier).div(50).times((D(Date.now()).minus(game.lastTick))).div(20)
-	game.firstHydrogenDimension.add(game.secondHydrogenDimension).times(game.secondHDMultiplier).div(50).times((D(Date.now()).minus(game.lastTick))).div(20)
+ function gameLoop() {
+	game.hydrogenNuclei = game.hydrogenNuclei.add(game.firstHydrogenDimension.times(game.firstHDMultiplier).div(50)).times((D(Date.now()).minus(game.lastTick))).div(20)
+	game.firstHydrogenDimension = game.firstHydrogenDimension.add(game.secondHydrogenDimension).times(game.secondHDMultiplier).div(50).times((D(Date.now()).minus(game.lastTick))).div(20)
 	document.getElementById("hydrogenDisplay").innerHTML = "You have " + game.hydrogenNuclei.times(50).div(50).round() + " hydrogen nuclei."
 	document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + game.firstHydrogenDimension.times(50).div(50).round() + " hydrogen dimension 1."
 	document.getElementById("hydrogenDimension2Display").innerHTML = "You have " + game.secondHydrogenDimension.times(50).div(50).round() + " hydrogen dimension 2."
@@ -27,13 +27,13 @@ function gameLoop() {
 }
 function buyFirstHydrogenDimension() {
 	if (game.hydrogenNuclei.greaterThanOrEqualTo(game.firstHDCost)) {
-		game.hydrogenNuclei.minus(game.firstHDCost)
-		game.firstHydrogenDimension.add(1)
-		game.firstHDTo10.add(1)
+		game.hydrogenNuclei = game.hydrogenNuclei.minus(game.firstHDCost)
+		game.firstHydrogenDimension = game.firstHydrogenDimension.add(1)
+		game.firstHDTo10 = game.firstHDTo10.add(1)
 		if (game.firstHDTo10.greaterThan(10)) {
 			game.firstHDTo10 = D(0)
-			game.firstHDCost.times(10)
-			game.firstHDMultiplier.times(2)
+			game.firstHDCost = game.firstHDCost.times(10)
+			game.firstHDMultiplier = game.firstHDMultiplier.times(2)
 			document.getElementById("hd1 cost").innerHTML = "a hydrogen dimension 1 costs " + game.firstHDCost + " hydrogen nuclei."
 		}
 	document.getElementById("hydrogenDimensionDisplay").innerHTML = "You have " + game.secondHydrogenDimension + " hydrogen dimension 2."
@@ -41,13 +41,13 @@ function buyFirstHydrogenDimension() {
 }
 function buySecondHydrogenDimension() {
 	if (game.hydrogenNuclei.greaterThanOrEqualTo(game.secondHDCost)) {
-	  game.hydrogenNuclei.minus(game.secondHDCost)
-	  game.secondHydrogenDimension.add(1)
-	  game.secondHDTo10.add(1)
+	  game.hydrogenNuclei = game.hydrogenNuclei.minus(game.secondHDCost)
+	  game.secondHydrogenDimension = game.secondHydrogenDimension.add(1)
+	  game.secondHDTo10 = game.secondHDTo10.add(1)
 	  if (game.secondHDTo10.greaterThan(10)) {
 	    game.secondHDTo10 = D(0)
-	    game.secondHDCost.times(10)
-	    game.secondHDMultiplier.times(2)
+	    game.secondHDCost = game.secondHDCost.times(10)
+	    game.secondHDMultiplier = game.secondHDMultiplier.times(2)
 			document.getElementById("hd2 cost").innerHTML = "a hydrogen dimension 2 costs " + game.secondHDCost + " hydrogen nuclei."
 		}
 	document.getElementById("hydrogenDimensionDisplay2").innerHTML = "You have " + game.secondHydrogenDimension + " hydrogen dimension 2."
