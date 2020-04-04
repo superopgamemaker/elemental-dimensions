@@ -1,6 +1,7 @@
 // Put the variables in a game object
 var game = {
 	hydrogenNuclei: 10,
+	heliumNuclei: 0,
 	firstHDCost: 10,
 	firstHDMultiplier: 1,
 	firstHDTo10: 0,
