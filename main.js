@@ -9,6 +9,10 @@ var game = {
 	secondHDMultiplier: 1,
 	secondHDTo10: 0,
 	secondHydrogenDimension: 0,
+	firstHeDCost: 10000000000,
+	firstHeDMultiplier: 1,
+	firstHeDTo10: 0,
+	firstHeliumDimension: 0,
 	// This is for off-window production
 	lastTick: Date.now(),
 }
